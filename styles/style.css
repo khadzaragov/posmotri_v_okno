@@ -233,16 +233,10 @@ video {
   color: #545050;
 }
 
-/* Убираем скроллбар для большинства браузеров */
 .content__list {
   position: relative;
   overflow-y: scroll;
   block-size: 298px;
-  scrollbar-width: none;
-}
-
-.content__list::-webkit-scrollbar {
-  display: none;
 }
 
 /* Отступы между элементами списка */
@@ -257,10 +251,6 @@ video {
   text-decoration: none;
 }
 
-.content__card-link:active {
-  background-color: #545050;
-}
-
 .content__card-link:hover {
   text-decoration: underline 1px #ffffff;
 }
@@ -273,9 +263,11 @@ video {
   outline: 1px solid #ffffff;
 }
 
-.content__card-link_current {
+.content__card-link_current,
+.content__card-link:active {
   background-color: #545050;
 }
+
 
 /* Видео карточки */
 .content__video-card {
@@ -285,14 +277,18 @@ video {
 
 .content__video-card-title {
   padding: 2px 2px 5px;
-  color: #ffffff; 
+  color: #ffffff;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 1;
   text-transform: uppercase;
-  hyphens: auto;
+  hyphens: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 
 .content__video-card-description {
   padding: 0 2px;
